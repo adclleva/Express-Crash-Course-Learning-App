@@ -36,4 +36,25 @@ router.get('/:id', (req, res) => {
   }
 })
 
+/**
+ * Creating a Member, a post request
+ * we can use the same routes as long as we use different requests methods
+ * 
+ * in Postman, for the headers, key: Content-Type and the Value: application/json
+ *  then for Body, it'll be raw and then the JSON data
+ *  for example:
+ *      {
+ *      	"name": "Jake Smith",
+ *        "email": "jake@email.com"       
+ *      }
+ *  then you need to use a body parser and we have to initialize it as middleware
+ * */ 
+router.post('/', (req, res) => {
+  // res.send(req.body) -> this line just shows us what is 'posted' or created
+
+  const newMember = {
+    
+  }
+})
+
 module.exports = router;

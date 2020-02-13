@@ -4,6 +4,11 @@ const logger = require('./middleware/logger')
 const app = express();
 
 
+// Body Parser Middlewar
+app.use(express.json())
+// this will handle form submissions; url encoded data
+app.use(express.urlencoded({ extended: false }));
+
 // this is to serve static files
 // Setting the static folder
 app.use(express.static(path.join(__dirname, 'public')))
