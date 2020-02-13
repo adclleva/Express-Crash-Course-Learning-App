@@ -1,7 +1,24 @@
 const express = require('express');
 const path = require('path');
+const members = require('./Members')
 
 const app = express();
+
+
+// this will be a simple restful api
+app.get('/api/members', (req, res) => {
+  res.json(members); // here we don't have to to .stringify
+}); 
+
+// a simple middlewar function
+const logger = (req, res, next) => {
+  console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`) // this will give us the http
+  next();
+}
+
+// Init middleware, this will run everytime we make a request
+app.use(logger); 
+
 
 // this is to serve static files
 // Setting the static folder
