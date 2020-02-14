@@ -66,6 +66,9 @@ router.post('/', (req, res) => {
   }
 
   members.push(newMember); 
+  // res.json(members) --> we don't usually show a json object once it has been create, usually it will do a redirect with the new member with server rendering views
+  // res.redirect('/create-new-member') --> this redirects to the page with the new member
+
   res.json(members)
 })
 
