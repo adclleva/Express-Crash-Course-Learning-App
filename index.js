@@ -25,6 +25,12 @@ app.get('/', (req, res) => res.render('index', {
   members: members
 }))
 
+app.get('/create-new-member', (req, res) => res.render('createNewMember', {
+  title: "Create New Member Page",
+  members: members
+}))
+
+
 // this is to serve static files
 // Setting the static folder
 app.use(express.static(path.join(__dirname, 'public')))
