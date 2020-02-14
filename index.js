@@ -3,8 +3,7 @@ const path = require('path');
 const logger = require('./middleware/logger')
 const app = express();
 
-
-// Body Parser Middlewar
+// Body Parser Middleware
 app.use(express.json())
 // this will handle form submissions; url encoded data
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +30,6 @@ app.use('/api/members', require('./routes/api/members'));
      })
  */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; 
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`))
