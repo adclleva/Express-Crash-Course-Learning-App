@@ -1,0 +1,15 @@
+ {{!-- You can use the variable from the render using {{}} --}}
+ {{!-- this is how you comment in handlebars too  --}}
+<h1 class ="text-center mb-3">{{title}}</h1>
+<h4>Members</h4>
+<ul class="list-group">
+  {{#each members }} 
+  {{!-- you start the loop with this #each --}}
+    <li class="list-group-item">{{this.name}}: {{this.email}}</li>
+  {{/each}}  
+  {{!-- you end the loop with this /each --}}
+
+</ul>
+
+<a href="/api/members" class="btn btn-success mt-4 float-left">Visit API</a>
+<a href="/create-new-member" class="btn btn-dark mt-4 float-right">Add New Member</a>
